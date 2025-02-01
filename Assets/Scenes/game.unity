@@ -221,7 +221,6 @@ GameObject:
   m_Component:
   - component: {fileID: 839093200}
   - component: {fileID: 839093199}
-  - component: {fileID: 839093198}
   - component: {fileID: 839093201}
   m_Layer: 0
   m_Name: cursor
@@ -230,20 +229,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &839093198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839093197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caf86b8f050e3421098b2d9303bde0a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  circlePrefab: {fileID: 0}
 --- !u!212 &839093199
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -308,7 +293,7 @@ Transform:
   m_GameObject: {fileID: 839093197}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3107564, y: -0.09869299, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   circlePrefab: {fileID: 7519060592059609914}
+  explosionRadius: 1.5
 --- !u!1001 &7519060592059609913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -341,12 +327,20 @@ PrefabInstance:
       value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2066687477027152344, guid: 2e914adbd1bd940dd853213225a0d8d3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2537034
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066687477027152344, guid: 2e914adbd1bd940dd853213225a0d8d3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.1491632
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066687477027152344, guid: 2e914adbd1bd940dd853213225a0d8d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3107564
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2066687477027152344, guid: 2e914adbd1bd940dd853213225a0d8d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09869299
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2066687477027152344, guid: 2e914adbd1bd940dd853213225a0d8d3, type: 3}
       propertyPath: m_LocalPosition.z

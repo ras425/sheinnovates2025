@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BouncingCircle : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Speed of the circle's movement
+    public float moveSpeed = 1f; // Slower speed for circles (change to your preferred speed)
     private Vector2 direction; // Direction the circle is moving in
 
     void Start()
