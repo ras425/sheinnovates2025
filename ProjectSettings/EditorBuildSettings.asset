@@ -12,3 +12,4 @@ EditorBuildSettings:
     path: Assets/Scenes/Arm.unity
     guid: f806e429277564441b4b5f699985a91f
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
