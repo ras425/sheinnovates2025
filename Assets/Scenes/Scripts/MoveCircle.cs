@@ -4,84 +4,146 @@ using UnityEngine;
 
 public class MoveCircle : MonoBehaviour
 {
-    public float moveSpeed = 10f; // Speed of the cursor movement
-    public GameObject circlePrefab; // Reference to the bouncing circle prefab
-    private List<GameObject> circles = new List<GameObject>(); // List to hold the circles
-    public float explosionRadius = 3.0f; // Increased explosion radius for easier detection
+    public float moveSpeed = 10f;
+    public GameObject circlePrefab;
+    private List<GameObject> circles = new List<GameObject>();
+    public float explosionRadius = 3.0f;
 
     void Start()
     {
-        SpawnCircles(10); // Spawn 10 circles at the start
+        SpawnCircles(10);
     }
 
     void Update()
     {
         // Cursor movement using arrow keys
-        if (Input.GetKey(KeyCode.RightArrow)) {
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.DownArrow)) {
-            transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-        }
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector2 movement = new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime;
+        transform.Translate(movement);
 
-        // Check if the player presses Enter to explode nearby circle
-        if (Input.GetKeyDown(KeyCode.Return)) {
+        // Check if the player presses Space to explode nearby circle
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             ExplodeNearbyCircle();
         }
+
+        // Clean up null entries and check for game end
+        CleanupAndCheckGameEnd();
     }
 
-    // Spawn random circles at random positions on the screen
     void SpawnCircles(int count)
     {
+        circles.Clear(); // Clear any existing circles
         for (int i = 0; i < count; i++)
         {
-            // Random spawn position within screen bounds (world coordinates)
             Vector2 spawnPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
             GameObject circle = Instantiate(circlePrefab, spawnPosition, Quaternion.identity);
+            circle.name = $"Circle_{i}"; // Give each circle a unique name
             circles.Add(circle);
         }
+        Debug.Log($"Spawned {count} circles");
     }
 
-    // Check if the cursor is near any circle and destroy it when Enter is pressed
     void ExplodeNearbyCircle()
     {
-        // Store destroyed circles to remove them later
-        List<GameObject> destroyedCircles = new List<GameObject>();
+        Vector2 cursorWorldPos = transform.position;
+        GameObject nearestCircle = null;
+        float nearestDistance = float.MaxValue;
 
-        // Iterate backward through the list to avoid skipping
-        for (int i = circles.Count - 1; i >= 0; i--)
+        // Find the nearest circle within explosion radius
+        foreach (GameObject circle in new List<GameObject>(circles)) // Create a copy of the list to iterate
         {
-            GameObject circle = circles[i];
-
-            // If the circle is null (destroyed), skip it
-            if (circle == null)
-                continue;
-
-            // Get the cursor position in world space
-            Vector2 cursorWorldPos = transform.position;
-
-            // Calculate the distance between the cursor and the circle
-            float distanceToCursor = Vector2.Distance(cursorWorldPos, circle.transform.position);
-
-            // If the distance is less than or equal to the explosion radius, destroy the circle
-            if (distanceToCursor <= explosionRadius)
+            if (circle != null)
             {
-                Debug.Log("Circle Exploded at: " + circle.transform.position);
-                Destroy(circle); // Destroy the circle
-                destroyedCircles.Add(circle); // Add to the list for later cleanup
+                float distance = Vector2.Distance(cursorWorldPos, circle.transform.position);
+                if (distance <= explosionRadius && distance < nearestDistance)
+                {
+                    nearestDistance = distance;
+                    nearestCircle = circle;
+                }
             }
         }
 
-        // Remove destroyed circles from the list after the loop
-        foreach (GameObject destroyedCircle in destroyedCircles)
+        // Destroy the nearest circle if found
+        if (nearestCircle != null)
         {
-            circles.Remove(destroyedCircle);
+            Debug.Log($"Destroying circle '{nearestCircle.name}' at position: {nearestCircle.transform.position}");
+            circles.Remove(nearestCircle);
+            Destroy(nearestCircle);
+        }
+        else
+        {
+            Debug.Log($"No circle found within explosion radius {explosionRadius} at position {cursorWorldPos}");
+        }
+    }
+
+    void CleanupAndCheckGameEnd()
+    {
+        // Remove null entries
+        int beforeCount = circles.Count;
+        circles.RemoveAll(circle => circle == null);
+        int afterCount = circles.Count;
+        
+        if (beforeCount != afterCount)
+        {
+            Debug.Log($"Cleaned up {beforeCount - afterCount} null entries. Remaining circles: {afterCount}");
+        }
+
+        // Check if game is complete
+        if (circles.Count == 0)
+        {
+            Debug.Log("All circles destroyed! Game Complete!");
+        }
+    }
+
+    void PrintCircleInfo()
+    {
+        Debug.Log($"=== Circle Status ===");
+        Debug.Log($"Total circles in list: {circles.Count}");
+        for (int i = 0; i < circles.Count; i++)
+        {
+            if (circles[i] != null)
+            {
+                Debug.Log($"Circle {i}: {circles[i].name} at position {circles[i].transform.position}");
+            }
+            else
+            {
+                Debug.Log($"Circle {i}: NULL REFERENCE");
+            }
+        }
+    }
+
+    void DestroyAllCircles()
+    {
+        Debug.Log("Destroying all remaining circles");
+        foreach (GameObject circle in new List<GameObject>(circles))
+        {
+            if (circle != null)
+            {
+                circles.Remove(circle);
+                Destroy(circle);
+            }
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        // Draw explosion radius
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+
+        // Draw lines to all active circles
+        if (circles != null)
+        {
+            Gizmos.color = Color.yellow;
+            foreach (GameObject circle in circles)
+            {
+                if (circle != null)
+                {
+                    Gizmos.DrawLine(transform.position, circle.transform.position);
+                }
+            }
         }
     }
 }
