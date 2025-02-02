@@ -918,7 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc67b7e24efb4a43a154f387e4d18e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: epidermisgame
+  sceneToLoad: Epidermis 5, 8
 --- !u!65 &1914567180
 BoxCollider:
   m_ObjectHideFlags: 0
