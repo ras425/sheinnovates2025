@@ -312,7 +312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  circlePrefab: {fileID: 1252180714541654056, guid: 2e914adbd1bd940dd853213225a0d8d3, type: 3}
+  circlePrefab1: {fileID: 1252180714541654056, guid: 2e914adbd1bd940dd853213225a0d8d3, type: 3}
+  circlePrefab2: {fileID: 1252180714541654056, guid: d71b4e65fcac7435482cf2822dde8e9e, type: 3}
   explosionRadius: 1.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

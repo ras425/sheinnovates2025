@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 2e69fe56fd7573e4792d5387d3b11e9f
+guid: dbc7aa3ea08194158b8714c0f1990a64
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1267690706044922797
-    second: entire_bod_0
-  - first:
-      213: -3215817782286453504
-    second: entire_bod_1
+      213: -942752460631593481
+    second: vib3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: entire_bod_0
+      name: vib3_0
       rect:
         serializedVersion: 2
-        x: 689
-        y: 47
-        width: 659
-        height: 1873
+        x: 130
+        y: 645
+        width: 352
+        height: 271
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dab2fda0bfdb79110800000000000000
-      internalID: 1267690706044922797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: entire_bod_1
-      rect:
-        serializedVersion: 2
-        x: 836
-        y: 46
-        width: 198
-        height: 348
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0057e60e3ce1f53d0800000000000000
-      internalID: -3215817782286453504
+      spriteID: 7fdade8c1abaae2f0800000000000000
+      internalID: -942752460631593481
       vertices: []
       indices: 
       edges: []
@@ -172,9 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      entire_bod_0: 1267690706044922797
-      entire_bod_1: -3215817782286453504
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,13 +5,14 @@ using UnityEngine;
 public class MoveCircle : MonoBehaviour
 {
     public float moveSpeed = 10f;
-    public GameObject circlePrefab;
+    public GameObject circlePrefab1;
+    public GameObject circlePrefab2;
     private List<GameObject> circles = new List<GameObject>();
     public float explosionRadius = 3.0f;
 
     void Start()
     {
-        SpawnCircles(10);
+        SpawnCircles(5);
     }
 
     void Update()
@@ -38,11 +39,14 @@ public class MoveCircle : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             Vector2 spawnPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
-            GameObject circle = Instantiate(circlePrefab, spawnPosition, Quaternion.identity);
-            circle.name = $"Circle_{i}"; // Give each circle a unique name
-            circles.Add(circle);
+            GameObject circle1 = Instantiate(circlePrefab1, spawnPosition, Quaternion.identity);
+            circle1.name = $"Circle1_{i}"; // Give each circle a unique name
+            circles.Add(circle1);
+
+            GameObject circle2 = Instantiate(circlePrefab2, spawnPosition, Quaternion.identity);
+            circle2.name = $"Circle2_{i}"; // Give each circle a unique name
+            circles.Add(circle2);
         }
-        Debug.Log($"Spawned {count} circles");
     }
 
     void ExplodeNearbyCircle()
