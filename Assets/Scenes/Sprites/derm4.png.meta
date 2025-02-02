@@ -1,70 +1,76 @@
 fileFormatVersion: 2
-guid: c15aa6a72f44285439dd6727ce48199f
+guid: 65b665fc77d234b159a5227d438660a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1351841087989692501
-    second: dotted_line_0
+      213: -5613810866344780516
+    second: derm4_0
   - first:
-      213: 4174836109107372939
-    second: dotted_line_1
+      213: 1348574551978373169
+    second: derm4_1
   - first:
-      213: -7805193029427240012
-    second: dotted_line_2
+      213: 4049536550946889076
+    second: derm4_2
   - first:
-      213: 3757651078795230134
-    second: dotted_line_3
+      213: -2858221173395864138
+    second: derm4_3
   - first:
-      213: -287548490976540708
-    second: dotted_line_4
+      213: 9179852508726419166
+    second: derm4_4
   - first:
-      213: 245056057134269015
-    second: dotted_line_5
+      213: -5031795024858721332
+    second: derm4_5
   - first:
-      213: -2489552075314709665
-    second: dotted_line_6
+      213: -6657117043461934150
+    second: derm4_6
   - first:
-      213: -2383190284350658424
-    second: dotted_line_7
+      213: 1109551200672838942
+    second: derm4_7
   - first:
-      213: -3762475866891758359
-    second: dotted_line_8
+      213: 6755397683470917108
+    second: derm4_8
   - first:
-      213: 5141172505491544678
-    second: dotted_line_9
+      213: 6278407948058495165
+    second: derm4_9
   - first:
-      213: 4499783163348975709
-    second: dotted_line_10
+      213: -439436162591564983
+    second: derm4_10
   - first:
-      213: 5949687860791577354
-    second: dotted_line_11
+      213: 6586862488057682877
+    second: derm4_11
   - first:
-      213: -1196446686624307302
-    second: dotted_line_12
+      213: -3573929581073653536
+    second: derm4_12
   - first:
-      213: 1082364955283665842
-    second: dotted_line_13
+      213: -5617865626906199458
+    second: derm4_13
   - first:
-      213: 7804736320235590909
-    second: dotted_line_14
+      213: -9196572637114815801
+    second: derm4_14
   - first:
-      213: -2685977228601181064
-    second: dotted_line_15
+      213: 7047433684745867582
+    second: derm4_15
   - first:
-      213: 6066776678408761629
-    second: dotted_line_16
+      213: -5075365478757528266
+    second: derm4_16
   - first:
-      213: 2456058329110582329
-    second: dotted_line_17
+      213: -4726701008906361384
+    second: derm4_17
   - first:
-      213: 1272009348947884659
-    second: dotted_line_18
+      213: 2424467984682873886
+    second: derm4_18
   - first:
-      213: -8955284505547362654
-    second: dotted_line_19
+      213: 1986838174197427421
+    second: derm4_19
   - first:
-      213: -625372566954389466
-    second: dotted_line_20
+      213: -1198089998521807793
+    second: derm4_20
+  - first:
+      213: -530468066825093503
+    second: derm4_21
+  - first:
+      213: 2975134204049266059
+    second: derm4_22
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,7 +112,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -173,13 +179,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dotted_line_0
+      name: derm4_0
       rect:
         serializedVersion: 2
-        x: 207
-        y: 497
-        width: 25
-        height: 9
+        x: 640
+        y: 1858
+        width: 7
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5583762ae44b2c210800000000000000
-      internalID: 1351841087989692501
+      spriteID: c1d9a43a2ccb712b0800000000000000
+      internalID: -5613810866344780516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_1
+      name: derm4_1
       rect:
         serializedVersion: 2
-        x: 246
-        y: 482
-        width: 17
-        height: 17
+        x: 1001
+        y: 1861
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b83a1de625fffe930800000000000000
-      internalID: 4174836109107372939
+      spriteID: 1307dc3f86917b210800000000000000
+      internalID: 1348574551978373169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_2
+      name: derm4_2
       rect:
         serializedVersion: 2
-        x: 133
-        y: 472
-        width: 32
-        height: 20
+        x: 672
+        y: 1792
+        width: 91
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b362ad1b426ea390800000000000000
-      internalID: -7805193029427240012
+      spriteID: 47d5628a908d23830800000000000000
+      internalID: 4049536550946889076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_3
+      name: derm4_3
       rect:
         serializedVersion: 2
-        x: 78
-        y: 438
-        width: 16
-        height: 12
+        x: 803
+        y: 1841
+        width: 7
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6bbf37d4fbbd52430800000000000000
-      internalID: 3757651078795230134
+      spriteID: 6b54d3e7cfe8558d0800000000000000
+      internalID: -2858221173395864138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_4
+      name: derm4_4
       rect:
         serializedVersion: 2
-        x: 253
-        y: 446
-        width: 15
-        height: 20
+        x: 756
+        y: 1785
+        width: 7
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd7c4a3cb2c620cf0800000000000000
-      internalID: -287548490976540708
+      spriteID: ededd114833656f70800000000000000
+      internalID: 9179852508726419166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_5
+      name: derm4_5
       rect:
         serializedVersion: 2
-        x: 47
-        y: 412
-        width: 18
-        height: 17
+        x: 861
+        y: 1783
+        width: 8
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,20 +304,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 752cb838f2d966300800000000000000
-      internalID: 245056057134269015
+      spriteID: cc3d7b0a5197b2ab0800000000000000
+      internalID: -5031795024858721332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_6
+      name: derm4_6
       rect:
         serializedVersion: 2
-        x: 183
-        y: 406
-        width: 36
-        height: 24
+        x: 906
+        y: 1765
+        width: 89
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5bb705e395537dd0800000000000000
-      internalID: -2489552075314709665
+      spriteID: ab3b044e15b2d93a0800000000000000
+      internalID: -6657117043461934150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_7
+      name: derm4_7
       rect:
         serializedVersion: 2
-        x: 118
-        y: 355
-        width: 27
-        height: 28
+        x: 789
+        y: 1719
+        width: 91
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,20 +348,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 888ed1520153deed0800000000000000
-      internalID: -2383190284350658424
+      spriteID: e15763830fae56f00800000000000000
+      internalID: 1109551200672838942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_8
+      name: derm4_8
       rect:
         serializedVersion: 2
-        x: 299
-        y: 352
-        width: 40
-        height: 12
+        x: 81
+        y: 321
+        width: 797
+        height: 1359
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,20 +370,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e4dfed222009cbc0800000000000000
-      internalID: -3762475866891758359
+      spriteID: 4fdd7c7c66effbd50800000000000000
+      internalID: 6755397683470917108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_9
+      name: derm4_9
       rect:
         serializedVersion: 2
-        x: 106
-        y: 325
-        width: 16
-        height: 21
+        x: 975
+        y: 1616
+        width: 84
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,20 +392,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66a14d6972d195740800000000000000
-      internalID: 5141172505491544678
+      spriteID: db8040ba3c2612750800000000000000
+      internalID: 6278407948058495165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_10
+      name: derm4_10
       rect:
         serializedVersion: 2
-        x: 222
-        y: 336
-        width: 53
-        height: 17
+        x: 1107
+        y: 1643
+        width: 8
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,20 +414,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5003b932f0727e30800000000000000
-      internalID: 4499783163348975709
+      spriteID: 94bd44b632fc6e9f0800000000000000
+      internalID: -439436162591564983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_11
+      name: derm4_11
       rect:
         serializedVersion: 2
-        x: 358
-        y: 329
-        width: 19
-        height: 24
+        x: 883
+        y: 1537
+        width: 58
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,20 +436,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0b8fea2699819250800000000000000
-      internalID: 5949687860791577354
+      spriteID: dbb1601c88c396b50800000000000000
+      internalID: 6586862488057682877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_12
+      name: derm4_12
       rect:
         serializedVersion: 2
-        x: 142
-        y: 319
-        width: 53
-        height: 14
+        x: 917
+        y: 363
+        width: 909
+        height: 1246
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,20 +458,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a97a01bd31e556fe0800000000000000
-      internalID: -1196446686624307302
+      spriteID: 0e028d34bf9d66ec0800000000000000
+      internalID: -3573929581073653536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_13
+      name: derm4_13
       rect:
         serializedVersion: 2
-        x: 346
-        y: 293
-        width: 23
-        height: 26
+        x: 900
+        y: 1492
+        width: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -474,20 +480,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b3b3053135550f00800000000000000
-      internalID: 1082364955283665842
+      spriteID: e5af0602af45902b0800000000000000
+      internalID: -5617865626906199458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_14
+      name: derm4_14
       rect:
         serializedVersion: 2
-        x: 234
-        y: 242
-        width: 64
-        height: 34
+        x: 875
+        y: 1400
+        width: 58
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,20 +502,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df45b3df45eff4c60800000000000000
-      internalID: 7804736320235590909
+      spriteID: 7caa1bd79e53f5080800000000000000
+      internalID: -9196572637114815801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_15
+      name: derm4_15
       rect:
         serializedVersion: 2
-        x: 173
-        y: 194
-        width: 24
-        height: 31
+        x: 892
+        y: 1355
+        width: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -518,20 +524,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87c307601fd79bad0800000000000000
-      internalID: -2685977228601181064
+      spriteID: e31566de8938dc160800000000000000
+      internalID: 7047433684745867582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_16
+      name: derm4_16
       rect:
         serializedVersion: 2
-        x: 390
-        y: 197
-        width: 48
-        height: 12
+        x: 804
+        y: 1161
+        width: 90
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,20 +546,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d11bd20fe35813450800000000000000
-      internalID: 6066776678408761629
+      spriteID: 63d806dccfda099b0800000000000000
+      internalID: -5075365478757528266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_17
+      name: derm4_17
       rect:
         serializedVersion: 2
-        x: 183
-        y: 153
-        width: 21
-        height: 19
+        x: 854
+        y: 979
+        width: 102
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,20 +568,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 934964e990ca51220800000000000000
-      internalID: 2456058329110582329
+      spriteID: 8d5e7acb972676eb0800000000000000
+      internalID: -4726701008906361384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_18
+      name: derm4_18
       rect:
         serializedVersion: 2
-        x: 279
-        y: 164
-        width: 40
-        height: 17
+        x: 915
+        y: 934
+        width: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -584,20 +590,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37ab30373c517a110800000000000000
-      internalID: 1272009348947884659
+      spriteID: e14745469c075a120800000000000000
+      internalID: 2424467984682873886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_19
+      name: derm4_19
       rect:
         serializedVersion: 2
-        x: 363
-        y: 75
-        width: 111
-        height: 119
+        x: 890
+        y: 842
+        width: 58
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -606,20 +612,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ae2a48703078b380800000000000000
-      internalID: -8955284505547362654
+      spriteID: ddc293feacaa29b10800000000000000
+      internalID: 1986838174197427421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dotted_line_20
+      name: derm4_20
       rect:
         serializedVersion: 2
-        x: 279
-        y: 19
-        width: 48
-        height: 39
+        x: 907
+        y: 797
+        width: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,8 +634,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 620d866b6fa3257f0800000000000000
-      internalID: -625372566954389466
+      spriteID: f4cc82d7e778f5fe0800000000000000
+      internalID: -1198089998521807793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: derm4_21
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 480
+        width: 91
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18eb3309a1663a8f0800000000000000
+      internalID: -530468066825093503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: derm4_22
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 453
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b85987fabccc94920800000000000000
+      internalID: 2975134204049266059
       vertices: []
       indices: 
       edges: []
@@ -638,7 +688,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -647,28 +697,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      dotted_line_0: 1351841087989692501
-      dotted_line_1: 4174836109107372939
-      dotted_line_10: 4499783163348975709
-      dotted_line_11: 5949687860791577354
-      dotted_line_12: -1196446686624307302
-      dotted_line_13: 1082364955283665842
-      dotted_line_14: 7804736320235590909
-      dotted_line_15: -2685977228601181064
-      dotted_line_16: 6066776678408761629
-      dotted_line_17: 2456058329110582329
-      dotted_line_18: 1272009348947884659
-      dotted_line_19: -8955284505547362654
-      dotted_line_2: -7805193029427240012
-      dotted_line_20: -625372566954389466
-      dotted_line_3: 3757651078795230134
-      dotted_line_4: -287548490976540708
-      dotted_line_5: 245056057134269015
-      dotted_line_6: -2489552075314709665
-      dotted_line_7: -2383190284350658424
-      dotted_line_8: -3762475866891758359
-      dotted_line_9: 5141172505491544678
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

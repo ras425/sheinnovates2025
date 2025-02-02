@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;  // Make sure to import TextMeshPro
+using TMPro;
 
 public class MoveCircle : MonoBehaviour
 {
@@ -11,9 +11,12 @@ public class MoveCircle : MonoBehaviour
     private List<GameObject> circles = new List<GameObject>();
     public float explosionRadius = 3.0f;
     public TextMeshProUGUI timerText;
-    public TextMeshProUGUI resultText;  // Result Text (You Win / You Lose)
+    public TextMeshProUGUI resultText;
     public float gameTime = 20f;
     private bool gameActive = true;
+
+    // Reference to the "Next" sprite
+    public GameObject nextSprite;
 
     void Start()
     {
@@ -22,8 +25,9 @@ public class MoveCircle : MonoBehaviour
         StartCoroutine(Timer());
         PositionTimerText();
 
-        // Hide the result text at the start
+        // Hide the result text and "Next" sprite at the start
         resultText.gameObject.SetActive(false);
+        nextSprite.SetActive(false);
     }
 
     void Update()
@@ -48,12 +52,19 @@ public class MoveCircle : MonoBehaviour
         circles.Clear();
         for (int i = 0; i < count; i++)
         {
-            Vector2 spawnPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
-            GameObject circle1 = Instantiate(circlePrefab1, spawnPosition, Quaternion.identity);
+            // Random spawn position within custom polygon boundaries
+            Vector2 spawnPosition1 = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
+            GameObject circle1 = Instantiate(circlePrefab1, spawnPosition1, Quaternion.identity);
             circles.Add(circle1);
 
-            GameObject circle2 = Instantiate(circlePrefab2, spawnPosition, Quaternion.identity);
+            // Ensure circlePrefab2 is spawned at a distinct position
+            Vector2 spawnPosition2 = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f)); 
+            GameObject circle2 = Instantiate(circlePrefab2, spawnPosition2, Quaternion.identity);
             circles.Add(circle2);
+
+            // Ensure both circles have the BouncingCircle script attached
+            circle1.AddComponent<BouncingCircle>();  // Add BouncingCircle for movement
+            circle2.AddComponent<BouncingCircle>();  // Add BouncingCircle for movement
         }
     }
 
@@ -90,9 +101,10 @@ public class MoveCircle : MonoBehaviour
         if (circles.Count == 0)
         {
             gameActive = false;
-            resultText.text = "You Win!"; // Set win message
+            resultText.text = "You Did It!"; // Set win message
             resultText.gameObject.SetActive(true); // Show the result text
             Debug.Log("All circles destroyed! You win!");
+            ShowNextButton(); // Show the "Next" button
         }
     }
 
@@ -109,10 +121,19 @@ public class MoveCircle : MonoBehaviour
         if (gameActive)
         {
             timerText.text = "Time's Up!";
-            resultText.text = "You Lose!"; // Set lose message
+            resultText.text = "You Failed :("; // Set lose message
             resultText.gameObject.SetActive(true); // Show the result text
             Debug.Log("Game Over! Time's up.");
             gameActive = false;
+            ShowNextButton(); // Show the "Next" button
+        }
+    }
+
+    void ShowNextButton()
+    {
+        if (nextSprite != null)
+        {
+            nextSprite.SetActive(true); // Make the "Next" button visible
         }
     }
 

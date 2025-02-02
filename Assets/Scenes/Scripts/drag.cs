@@ -33,8 +33,12 @@ public class Draggable : MonoBehaviour
         Vector3 newPosition = GetMouseWorldPos() + offset;
         transform.position = newPosition;
         
-        // Update the line renderer to trace movement
-        lineRenderer.positionCount++;
-        lineRenderer.SetPosition(lineRenderer.positionCount - 1, newPosition);
+        // Only update the line if the new position is different enough
+        if (lineRenderer.positionCount == 0 || Vector3.Distance(newPosition, lineRenderer.GetPosition(lineRenderer.positionCount - 1)) > 0.1f)
+        {
+            lineRenderer.positionCount++;
+            lineRenderer.SetPosition(lineRenderer.positionCount - 1, newPosition);
+        }
     }
+
 }
