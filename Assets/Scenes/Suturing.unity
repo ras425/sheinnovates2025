@@ -1059,6 +1059,7 @@ GameObject:
   - component: {fileID: 1433395137}
   - component: {fileID: 1433395140}
   - component: {fileID: 1433395139}
+  - component: {fileID: 1433395140}
   m_Layer: 0
   m_Name: next_0
   m_TagString: Untagged
@@ -1130,7 +1131,11 @@ Transform:
   m_GameObject: {fileID: 1433395136}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 8.23, y: -4.44, z: 0}
+=======
+  m_LocalPosition: {x: 9.79, y: -4.58, z: -1}
+>>>>>>> 29f1045847bffde39567db910c6c0c11584d49e8
   m_LocalScale: {x: 0.6378, y: 0.731, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1164,11 +1169,19 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+<<<<<<< HEAD
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 3.1199996, y: 1.99, z: 0.2}
+=======
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.12, y: 1.99, z: 0.2}
+>>>>>>> 29f1045847bffde39567db910c6c0c11584d49e8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1519455276
 GameObject:
