@@ -3,9 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
+    public string sceneToLoad;
+
     void OnMouseDown()
     {
-        // Load the Arm scene when clicked
-        SceneManager.LoadScene("Arm");
+        if (!string.IsNullOrEmpty(sceneToLoad))
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
+        else{
+            Debug.Log("Test");
+        }
     }
 }

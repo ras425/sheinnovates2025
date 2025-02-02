@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arm.unity
     guid: f806e429277564441b4b5f699985a91f
+  - enabled: 1
+    path: Assets/Scenes/Epidermis.unity
+    guid: b3f3779cf60acf847ad36c88956e1b3f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
