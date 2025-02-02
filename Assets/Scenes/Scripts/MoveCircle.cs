@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;  // Make sure to import TextMeshPro
 
 public class MoveCircle : MonoBehaviour
 {
@@ -10,15 +10,20 @@ public class MoveCircle : MonoBehaviour
     public GameObject circlePrefab2;
     private List<GameObject> circles = new List<GameObject>();
     public float explosionRadius = 3.0f;
-    public Text timerText;
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI resultText;  // Result Text (You Win / You Lose)
     public float gameTime = 20f;
     private bool gameActive = true;
 
     void Start()
     {
+        // Initialize the game
         SpawnCircles(5);
         StartCoroutine(Timer());
         PositionTimerText();
+
+        // Hide the result text at the start
+        resultText.gameObject.SetActive(false);
     }
 
     void Update()
@@ -84,22 +89,31 @@ public class MoveCircle : MonoBehaviour
 
         if (circles.Count == 0)
         {
-            Debug.Log("All circles destroyed! Game Complete!");
             gameActive = false;
+            resultText.text = "You Win!"; // Set win message
+            resultText.gameObject.SetActive(true); // Show the result text
+            Debug.Log("All circles destroyed! You win!");
         }
     }
 
     IEnumerator Timer()
     {
-        while (gameTime > 0)
+        while (gameTime > 0 && gameActive)
         {
             timerText.text = "Time Left: " + Mathf.Ceil(gameTime).ToString();
             yield return new WaitForSeconds(1f);
             gameTime--;
         }
-        timerText.text = "Time's Up!";
-        Debug.Log("Game Over!");
-        gameActive = false;
+
+        // If time runs out and the game is still active, display lose message
+        if (gameActive)
+        {
+            timerText.text = "Time's Up!";
+            resultText.text = "You Lose!"; // Set lose message
+            resultText.gameObject.SetActive(true); // Show the result text
+            Debug.Log("Game Over! Time's up.");
+            gameActive = false;
+        }
     }
 
     void PositionTimerText()
@@ -107,10 +121,10 @@ public class MoveCircle : MonoBehaviour
         if (timerText != null)
         {
             RectTransform rectTransform = timerText.GetComponent<RectTransform>();
-            rectTransform.anchorMin = new Vector2(0.5f, 1f);
-            rectTransform.anchorMax = new Vector2(0.5f, 1f);
-            rectTransform.pivot = new Vector2(0.5f, 1f);
-            rectTransform.anchoredPosition = new Vector2(0, -50);
+            rectTransform.anchorMin = new Vector2(1f, 1f);   // Top-right corner
+            rectTransform.anchorMax = new Vector2(1f, 1f);   // Top-right corner
+            rectTransform.pivot = new Vector2(1f, 1f);       // Top-right corner
+            rectTransform.anchoredPosition = new Vector2(-10, -10);  // Offset from the corner
         }
     }
 }
