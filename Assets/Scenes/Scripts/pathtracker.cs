@@ -1,22 +1,4 @@
-// using UnityEngine;
-
-// public class pathtracker : MonoBehaviour
-// {
-//     // Start is called once before the first execution of Update after the MonoBehaviour is created
-//     void Start()
-//     {
-        
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-        
-//     }
-// }
-
-
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PathTracker : MonoBehaviour
@@ -68,5 +50,144 @@ public class PathTracker : MonoBehaviour
     {
         Debug.Log("next");
         SceneManager.LoadScene(nextSceneName);
+    }
+}*/
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class PathTracker : MonoBehaviour
+{
+    public string nextSceneName;
+    public GameObject needle;
+    private LineRenderer pathLineRenderer;  // This is your dotted line renderer
+    private LineRenderer needleLineRenderer;
+    private int requiredMatches = 5; // Adjust this based on your path length and accuracy requirements
+    private int matchCount = 0;
+    private bool sceneLoaded = false;
+
+    void Start()
+    {
+        if (needle != null) 
+        {
+            needleLineRenderer = needle.GetComponent<LineRenderer>();
+        }
+        pathLineRenderer = GetComponent<LineRenderer>();
+
+        if (pathLineRenderer == null || needleLineRenderer == null) 
+        {
+            Debug.LogError("LineRenderer components are not properly assigned!");
+        }
+
+        Debug.Log("Start");
+    }
+
+/*
+    void Update()
+    {
+        if (pathLineRenderer != null && needleLineRenderer != null)
+        {
+            CheckPathAlignment();
+            if (matchCount >= requiredMatches && !sceneLoaded)
+            {
+                Debug.Log("Path Completed Successfully");
+                sceneLoaded = true;
+                LoadNextScene();
+            }
+        }
+    }
+
+    void CheckPathAlignment()
+    {
+    matchCount = 0;
+
+    Debug.Log($"Path Points: {pathLineRenderer.positionCount}, Needle Points: {needleLineRenderer.positionCount}");
+
+    // Check if positions are calculated and list a few
+    if (needleLineRenderer.positionCount > 0 && pathLineRenderer.positionCount > 0) {
+        Debug.Log($"Sample Needle Position: {needleLineRenderer.GetPosition(0)}");
+        Debug.Log($"Sample Path Position: {pathLineRenderer.GetPosition(0)}");
+    }
+
+    for (int i = 0; i < needleLineRenderer.positionCount; i++)
+    {
+        for (int j = 0; j < pathLineRenderer.positionCount; j++)
+        {
+            float distance = Vector3.Distance(needleLineRenderer.GetPosition(i), pathLineRenderer.GetPosition(j));
+            if (i < 10 && j < 10) {  // Limiting to first 10 comparisons
+                Debug.Log($"Distance between Needle [{i}] and Path [{j}]: {distance}");
+            }
+
+            if (distance < 0.1f)  // Adjust this threshold if necessary
+            {
+                matchCount++;
+                break;  // Breaks out of the inner loop if a close enough match is found
+            }
+        }
+    }
+
+    Debug.Log($"Current Matches: {matchCount}");
+    }
+*/
+
+void Update()
+{
+    if (pathLineRenderer != null && needleLineRenderer != null)
+    {
+        CheckPathAlignment();
+    }
+}
+
+void CheckPathAlignment()
+{
+    matchCount = 0;
+
+    for (int i = 0; i < needleLineRenderer.positionCount; i++)
+    {
+        Vector3 needlePointWorld = needleLineRenderer.transform.TransformPoint(needleLineRenderer.GetPosition(i));
+
+        for (int j = 0; j < pathLineRenderer.positionCount; j++)
+        {
+            Vector3 pathPointWorld = pathLineRenderer.transform.TransformPoint(pathLineRenderer.GetPosition(j));
+            float distance = Vector3.Distance(needlePointWorld, pathPointWorld);
+
+            if (distance < 0.1f)  // Adjust this threshold as necessary
+            {
+                matchCount++;
+                break;  // Break after first match found to avoid duplicates
+            }
+        }
+    }
+
+    Debug.Log($"Current Matches: {matchCount}");
+}
+
+
+    void LoadNextScene()
+    {
+        SceneManager.LoadScene(nextSceneName);
+        Debug.Log("Loading Next Scene");
+    }
+
+
+    void OnDrawGizmos()
+    {
+        if (needleLineRenderer != null)
+        {
+            for (int i = 0; i < needleLineRenderer.positionCount; i++)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawSphere(needleLineRenderer.transform.TransformPoint(needleLineRenderer.GetPosition(i)), 0.05f);
+            }
+        }
+
+        if (pathLineRenderer != null)
+        {
+            for (int j = 0; j < pathLineRenderer.positionCount; j++)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawSphere(pathLineRenderer.transform.TransformPoint(pathLineRenderer.GetPosition(j)), 0.05f);
+            }
+        }
     }
 }
