@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc67b7e24efb4a43a154f387e4d18e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Epidermis 2
+  sceneToLoad: shooting_1
 --- !u!65 &1279906296
 BoxCollider:
   m_ObjectHideFlags: 0
