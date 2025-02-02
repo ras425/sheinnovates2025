@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Suturing.unity
     guid: 77321afdda0713d4f857df348236b4d0
+  - enabled: 1
+    path: Assets/Scenes/SuturedUp.unity
+    guid: f76986cca0d8e5245908fd11ae46d3ea
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

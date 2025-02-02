@@ -11,9 +11,12 @@ public class OverlapDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Triggered with: " + other.gameObject.name);
+
         if (other.gameObject.CompareTag("Capsule")) // Ensure the capsule has the tag "Capsule"
         {
             nextButton.SetActive(true); // Show the Next button
+            Debug.Log("Capsule Entered");
         }
     }
 

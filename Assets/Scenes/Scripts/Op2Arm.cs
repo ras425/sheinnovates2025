@@ -7,6 +7,7 @@ public class SceneSwitch : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("in method");
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
             SceneManager.LoadScene(sceneToLoad);
