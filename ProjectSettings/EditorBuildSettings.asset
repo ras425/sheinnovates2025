@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arm 2 (dialogue 3).unity
     guid: 31edcefe5b8a24bacad4c0a44de45fbb
+  - enabled: 1
+    path: Assets/Scenes/Epidermis 2, 5.unity
+    guid: 2581774a7c2c04ffd823e50c601458a1
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
