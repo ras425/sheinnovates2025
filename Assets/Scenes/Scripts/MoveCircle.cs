@@ -24,6 +24,8 @@ public class MoveCircle : MonoBehaviour
         SpawnCircles(5);
         StartCoroutine(Timer());
         PositionTimerText();
+        
+        //DontDestroyOnLoad(nextSprite);
 
         // Hide the result text and "Next" sprite at the start
         resultText.gameObject.SetActive(false);
@@ -133,7 +135,7 @@ public class MoveCircle : MonoBehaviour
     {
         if (nextSprite != null)
         {
-            nextSprite.SetActive(true); // Make the "Next" button visible
+        nextSprite.SetActive(true); // Make the "Next" button visible
         }
     }
 
