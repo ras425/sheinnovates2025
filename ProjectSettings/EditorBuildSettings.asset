@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Epidermis 1, 4.unity
     guid: b3f3779cf60acf847ad36c88956e1b3f
   - enabled: 1
-    path: Assets/Scenes/epidermisgame.unity
+    path: Assets/Scenes/epidermisminigame.unity
     guid: 19c37f4e14da840c1b8caebe872af214
   - enabled: 1
     path: Assets/Scenes/4.unity
