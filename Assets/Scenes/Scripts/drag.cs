@@ -1,26 +1,19 @@
-// using UnityEngine;
-
-// public class drag : MonoBehaviour
-// {
-//     // Start is called once before the first execution of Update after the MonoBehaviour is created
-//     void Start()
-//     {
-        
-//     }
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-        
-//     }
-// }
-
 using UnityEngine;
 
+[RequireComponent(typeof(LineRenderer))]
 public class Draggable : MonoBehaviour
 {
     private Vector3 offset;
     private float zCoordinate;
+    private LineRenderer lineRenderer;
+
+    void Start()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.positionCount = 0;
+        lineRenderer.startWidth = 0.1f;
+        lineRenderer.endWidth = 0.1f;
+    }
 
     void OnMouseDown()
     {
@@ -37,6 +30,11 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDrag()
     {
-        transform.position = GetMouseWorldPos() + offset;
+        Vector3 newPosition = GetMouseWorldPos() + offset;
+        transform.position = newPosition;
+        
+        // Update the line renderer to trace movement
+        lineRenderer.positionCount++;
+        lineRenderer.SetPosition(lineRenderer.positionCount - 1, newPosition);
     }
 }

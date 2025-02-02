@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveCircle : MonoBehaviour
 {
@@ -9,42 +10,44 @@ public class MoveCircle : MonoBehaviour
     public GameObject circlePrefab2;
     private List<GameObject> circles = new List<GameObject>();
     public float explosionRadius = 3.0f;
+    public Text timerText;
+    public float gameTime = 20f;
+    private bool gameActive = true;
 
     void Start()
     {
         SpawnCircles(5);
+        StartCoroutine(Timer());
+        PositionTimerText();
     }
 
     void Update()
     {
-        // Cursor movement using arrow keys
+        if (!gameActive) return;
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime;
         transform.Translate(movement);
 
-        // Check if the player presses Space to explode nearby circle
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ExplodeNearbyCircle();
         }
 
-        // Clean up null entries and check for game end
         CleanupAndCheckGameEnd();
     }
 
     void SpawnCircles(int count)
     {
-        circles.Clear(); // Clear any existing circles
+        circles.Clear();
         for (int i = 0; i < count; i++)
         {
             Vector2 spawnPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
             GameObject circle1 = Instantiate(circlePrefab1, spawnPosition, Quaternion.identity);
-            circle1.name = $"Circle1_{i}"; // Give each circle a unique name
             circles.Add(circle1);
 
             GameObject circle2 = Instantiate(circlePrefab2, spawnPosition, Quaternion.identity);
-            circle2.name = $"Circle2_{i}"; // Give each circle a unique name
             circles.Add(circle2);
         }
     }
@@ -55,8 +58,7 @@ public class MoveCircle : MonoBehaviour
         GameObject nearestCircle = null;
         float nearestDistance = float.MaxValue;
 
-        // Find the nearest circle within explosion radius
-        foreach (GameObject circle in new List<GameObject>(circles)) // Create a copy of the list to iterate
+        foreach (GameObject circle in new List<GameObject>(circles))
         {
             if (circle != null)
             {
@@ -69,85 +71,46 @@ public class MoveCircle : MonoBehaviour
             }
         }
 
-        // Destroy the nearest circle if found
         if (nearestCircle != null)
         {
-            Debug.Log($"Destroying circle '{nearestCircle.name}' at position: {nearestCircle.transform.position}");
             circles.Remove(nearestCircle);
             Destroy(nearestCircle);
-        }
-        else
-        {
-            Debug.Log($"No circle found within explosion radius {explosionRadius} at position {cursorWorldPos}");
         }
     }
 
     void CleanupAndCheckGameEnd()
     {
-        // Remove null entries
-        int beforeCount = circles.Count;
         circles.RemoveAll(circle => circle == null);
-        int afterCount = circles.Count;
-        
-        if (beforeCount != afterCount)
-        {
-            Debug.Log($"Cleaned up {beforeCount - afterCount} null entries. Remaining circles: {afterCount}");
-        }
 
-        // Check if game is complete
         if (circles.Count == 0)
         {
             Debug.Log("All circles destroyed! Game Complete!");
+            gameActive = false;
         }
     }
 
-    void PrintCircleInfo()
+    IEnumerator Timer()
     {
-        Debug.Log($"=== Circle Status ===");
-        Debug.Log($"Total circles in list: {circles.Count}");
-        for (int i = 0; i < circles.Count; i++)
+        while (gameTime > 0)
         {
-            if (circles[i] != null)
-            {
-                Debug.Log($"Circle {i}: {circles[i].name} at position {circles[i].transform.position}");
-            }
-            else
-            {
-                Debug.Log($"Circle {i}: NULL REFERENCE");
-            }
+            timerText.text = "Time Left: " + Mathf.Ceil(gameTime).ToString();
+            yield return new WaitForSeconds(1f);
+            gameTime--;
         }
+        timerText.text = "Time's Up!";
+        Debug.Log("Game Over!");
+        gameActive = false;
     }
 
-    void DestroyAllCircles()
+    void PositionTimerText()
     {
-        Debug.Log("Destroying all remaining circles");
-        foreach (GameObject circle in new List<GameObject>(circles))
+        if (timerText != null)
         {
-            if (circle != null)
-            {
-                circles.Remove(circle);
-                Destroy(circle);
-            }
-        }
-    }
-
-    void OnDrawGizmos()
-    {
-        // Draw explosion radius
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
-
-        // Draw lines to all active circles
-        if (circles != null)
-        {
-            Gizmos.color = Color.yellow;
-            foreach (GameObject circle in circles)
-            {
-                if (circle != null)
-                {
-                    Gizmos.DrawLine(transform.position, circle.transform.position);
-                }
-            }
+            RectTransform rectTransform = timerText.GetComponent<RectTransform>();
+            rectTransform.anchorMin = new Vector2(0.5f, 1f);
+            rectTransform.anchorMax = new Vector2(0.5f, 1f);
+            rectTransform.pivot = new Vector2(0.5f, 1f);
+            rectTransform.anchoredPosition = new Vector2(0, -50);
         }
     }
 }
