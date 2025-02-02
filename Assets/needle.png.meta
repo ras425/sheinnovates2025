@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: e4489a47d6f51d64f91f506f30585620
+guid: f007c8d8c84d70947866b5a621bfddb5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8475296980344780620
-    second: suture_0
-  - first:
-      213: -8864142728781812033
-    second: suture_1
-  - first:
-      213: 8580326362395184965
-    second: suture_2
+      213: 542796057223170383
+    second: needle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: suture_0
+      name: needle_0
       rect:
         serializedVersion: 2
-        x: 59
-        y: 351
-        width: 11
-        height: 10
+        x: 51
+        y: 56
+        width: 504
+        height: 343
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c47346713bd4e9570800000000000000
-      internalID: 8475296980344780620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: suture_1
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 100
-        width: 242
-        height: 344
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fbe2994072d3cf480800000000000000
-      internalID: -8864142728781812033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: suture_2
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 252
-        width: 39
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 54f0c77bd51731770800000000000000
-      internalID: 8580326362395184965
+      spriteID: f4905406326688700800000000000000
+      internalID: 542796057223170383
       vertices: []
       indices: 
       edges: []
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      suture_0: 8475296980344780620
-      suture_1: -8864142728781812033
-      suture_2: 8580326362395184965
+      needle_0: 542796057223170383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
